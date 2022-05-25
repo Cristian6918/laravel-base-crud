@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    {{-- @dump($menu)
-    @include('../partials/header') --}}
+
+    {{-- @include('../partials/header') --}}
     <main>
 
         @include('../partials.hero')
@@ -21,7 +21,7 @@
             <div clasS='container'>
                 @foreach ($comics as $index => $comic)
                     <div class='film-card'>
-                        <a href="#">
+                        <a href="{{ route('comics.show', $comic->id) }}">
                             <div class="image-container">
                                 <img class="film-img" src='{{ $comic['thumb'] }}' alt=''>
                             </div>
