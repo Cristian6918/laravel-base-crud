@@ -1,1 +1,127 @@
-//
+
+
+@import './banner.scss';
+@import './detailsMain.scss';
+@import './footer.scss';
+@import './header.scss';
+@import './hero.scss';
+@import './variables.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+// film-card
+.film-card {
+    width: calc(100% /6 - 20px);
+    margin: 1rem 0;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.9s;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    &:hover {
+        transform: scale(1.2);
+        z-index: 1;
+
+        .image-container {
+            border: 1px solid $primary-blue;
+            box-shadow: 0px 0px 15px 4px $primary-blue
+        }
+
+
+    }
+
+
+
+
+    .image-container {
+        width: 100%;
+        aspect-ratio: 1;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0px 0px 15px 4px rgba(255, 255, 255, 0.315);
+
+
+
+
+
+
+
+        .film-img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+
+        }
+
+    }
+}
+
+.title-container {
+    margin-top: 1rem;
+
+}
+
+.film-container {
+    width: 100%;
+    background-color: #1C1C1C;
+    padding: 3em;
+    text-align: center;
+    position: relative;
+
+    .series-label {
+        height: 4vh;
+        font-size: 1.2rem;
+        width: 15%;
+        position: absolute;
+        left: 10%;
+        top: -2vh;
+        background-color: $primary-blue;
+        color: white;
+        padding: 10px;
+
+    }
+
+
+    .container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+
+
+
+    }
+}
+
+button {
+    margin: 2rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #0281f7;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+
+    &:active {
+
+        box-shadow: 0px 0px 15px 4px rgba(255, 255, 255, 0.315);
+    }
+}
