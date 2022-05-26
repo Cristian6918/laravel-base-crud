@@ -6,6 +6,7 @@
 @import './header.scss';
 @import './hero.scss';
 @import './variables.scss';
+@import '/form.scss';
 
 
 * {
@@ -23,6 +24,7 @@
     text-align: left;
     cursor: pointer;
     transition: transform 0.9s;
+    position:relative;
 
     a {
         text-decoration: none;
@@ -37,6 +39,10 @@
         .image-container {
             border: 1px solid $primary-blue;
             box-shadow: 0px 0px 15px 4px $primary-blue
+        }
+
+        .edit-delete{
+            opacity: 1;
         }
 
 
@@ -69,6 +75,42 @@
         }
 
     }
+    .edit-delete{
+        opacity: 0;
+        width:100%;
+        display:flex;
+        height:30px;
+        margin-bottom:20px;
+
+
+        .edit,
+        .delete{
+            width:50%;
+            padding:5px;
+            text-align: center;
+        }
+        .edit{
+            color:green;
+
+
+            &:hover{
+                background-color: $primary-blue;
+
+                a{
+                    color:white;
+                }
+            }
+        }
+        .delete{
+            &:hover{
+                background-color: $primary-blue;
+
+            }
+
+        }
+    }
+
+
 }
 
 .title-container {

@@ -14,6 +14,7 @@
     {{-- @include('../partials/header') --}}
     <main>
 
+
         @include('../partials.hero')
 
         <div class="film-container">
@@ -22,7 +23,8 @@
                 <div class="add-new">ADD NEW SERIES</div>
             </a>
             <div clasS='container'>
-                @foreach ($comics as $index => $comic)
+
+                @foreach ($comics as $comic)
                     <div class='film-card'>
                         <a href="{{ route('comics.show', $comic->id) }}">
                             <div class="image-container">
@@ -32,6 +34,24 @@
                                 {{ $comic['title'] }}
                             </div>
                         </a>
+                        <div class="edit-delete">
+                            <div class="edit">
+                                <a href="{{ route('comics.edit', $comic->id) }}">Edit</a>
+
+                            </div>
+                            <div class="delete">
+                                <a href="{{ route('comics.destroy', $comic->id) }}">Delete</a>
+
+                            </div>
+                        </div>
+                        <div class="delete-page">
+                            <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <span>ARE YOU SURE?</span>
+                                <input type="submit" value="DELETE">
+                            </form>
+                        </div>
                     </div>
                 @endforeach
 
