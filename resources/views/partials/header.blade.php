@@ -9,7 +9,6 @@
                  <a class='ct-link ' href="#">{{ $item['title'] }}</a>
              @endif
          @endforeach --}}
-         @dump($menu)
 
      </div>
  </div>

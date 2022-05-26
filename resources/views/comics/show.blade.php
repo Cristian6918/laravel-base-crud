@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    {{-- @include('/partials.header') --}}
+    @include('/partials.header')
     @include('/partials.hero')
+
 
     <div class="main-top">
         <div class="img-container">
