@@ -18,6 +18,9 @@
 
         <div class="film-container">
             <div class="series-label">CURRENT SERIES</div>
+            <a href="{{ route('comics.create') }}">
+                <div class="add-new">ADD NEW SERIES</div>
+            </a>
             <div clasS='container'>
                 @foreach ($comics as $index => $comic)
                     <div class='film-card'>

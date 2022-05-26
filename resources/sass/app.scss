@@ -96,6 +96,19 @@
 
     }
 
+    .add-new{
+        height: 4vh;
+            font-size: 1.2rem;
+            width: 10%;
+            position: absolute;
+            right: 10%;
+            top: -2vh;
+            background-color: $primary-blue;
+            color: white;
+            padding: 10px;
+
+    }
+
 
     .container {
         width: 80%;

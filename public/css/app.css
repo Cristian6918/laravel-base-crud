@@ -456,6 +456,18 @@ li {
   padding: 10px;
 }
 
+.film-container .add-new {
+  height: 4vh;
+  font-size: 1.2rem;
+  width: 10%;
+  position: absolute;
+  right: 10%;
+  top: -2vh;
+  background-color: #0281f7;
+  color: white;
+  padding: 10px;
+}
+
 .film-container .container {
   width: 80%;
   margin: auto;
