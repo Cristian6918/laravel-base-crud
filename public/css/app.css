@@ -61,22 +61,35 @@
   border: 1px solid white;
 }
 
-.main-top .delete-page {
-  width: 20%;
+.main-top .buttons {
   position: absolute;
-  top: -2vh;
+  width: 30%;
+  height: 4vh;
+  top: -1vh;
   right: 15%;
-  width: 200px;
-  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-.main-top .delete-page input {
-  width: 100%;
+.main-top .buttons a,
+.main-top .buttons span {
+  border: 1px solid white;
+  width: 40%;
+  color: white;
   height: 4vh;
   padding: 10px;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main-top .buttons .delete-button {
   background-color: red;
-  color: white;
-  border: 1px solid white;
+}
+
+.main-top .buttons .edit-button {
+  background-color: #55b958;
 }
 
 .main-content {
@@ -247,6 +260,31 @@
   width: 37px;
   aspect-ratio: 1;
   background: url(/images/cta-icons.png?66ce11d0fe1c08d1276451a49fdd1bb9) -111px 0;
+}
+
+.delete-page {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.925);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-page .cancel-button {
+  background-color: #0281f7;
+}
+
+.delete-page input {
+  width: 30%;
+  height: 4vh;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: 1px solid white;
 }
 
 .main-section {
@@ -438,6 +476,17 @@ li {
 .form-container form .input-section input {
   width: 100%;
   height: 4vh;
+  font-size: 1.1rem;
+  outline: none;
+  outline-offset: none;
+  border: none;
+  border-bottom: 1px solid #0281f7;
+  background-color: white;
+}
+
+.form-container form .input-section textarea {
+  width: 100%;
+  height: 8vh;
   font-size: 1.1rem;
   outline: none;
   outline-offset: none;

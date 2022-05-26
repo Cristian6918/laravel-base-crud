@@ -10,6 +10,15 @@
 </head>
 
 <body>
+
+    <form class="delete-page" action="{{ route('comics.destroy', $comic->id) }}" method="post">
+        @csrf
+        @method('DELETE')
+        <h1>Are you Sure?</h1>
+        <input class="cancel-button" type="button" value="Cancel" onclick="closeForm()">
+        <input type="submit" value="DELETE">
+    </form>
+
     @include('/partials.header')
     @include('/partials.hero')
 
@@ -18,14 +27,11 @@
         <div class="img-container">
             <img src="{{ $comic['thumb'] }}" alt="">
         </div>
-        <div class="delete-page" onclick="return confirm('Are you sure?')">
-            <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
-                @csrf
-                @method('DELETE')
-
-                <input type="submit" value="DELETE">
-            </form>
+        <div class="buttons">
+            <a href="{{ route('comics.edit', $comic->id) }}" class="edit-button">Edit</a>
+            <span onclick="openForm()" class="delete-button">Delete</span>
         </div>
+
     </div>
     <div class="main-content">
         <div class="container">
@@ -175,5 +181,14 @@
     @include('/partials.footer')
 
 </body>
+<script>
+    function openForm() {
+        document.querySelector(".delete-page").style.display = "flex";
+    }
+
+    function closeForm() {
+        document.querySelector(".delete-page").style.display = "none";
+    }
+</script>
 
 </html>
