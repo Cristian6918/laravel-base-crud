@@ -24,8 +24,12 @@
             </a>
             <div clasS='container'>
 
+
                 @foreach ($comics as $comic)
                     <div class='film-card'>
+
+
+
                         <a href="{{ route('comics.show', $comic->id) }}">
                             <div class="image-container">
                                 <img class="film-img" src='{{ $comic['thumb'] }}' alt=''>
@@ -40,18 +44,13 @@
 
                             </div>
                             <div class="delete">
-                                <a href="{{ route('comics.destroy', $comic->id) }}">Delete</a>
+                                <a href="{{ route('comics.show', $comic->id) }}">Delete</a>
 
                             </div>
                         </div>
-                        <div class="delete-page">
-                            <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <span>ARE YOU SURE?</span>
-                                <input type="submit" value="DELETE">
-                            </form>
-                        </div>
+
+
+
                     </div>
                 @endforeach
 
@@ -66,6 +65,7 @@
     <footer>
         @include('partials.footer')
     </footer>
+
 
 
 

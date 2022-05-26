@@ -17,6 +17,14 @@
         <div class="img-container">
             <img src="{{ $comic['thumb'] }}" alt="">
         </div>
+        <div class="delete-page" onclick="return confirm('Are you sure?')">
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+
+                <input type="submit" value="DELETE">
+            </form>
+        </div>
     </div>
     <div class="main-content">
         <div class="container">
