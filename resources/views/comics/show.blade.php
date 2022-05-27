@@ -23,6 +23,7 @@
     @include('/partials.hero')
 
 
+
     <div class="main-top">
         <div class="img-container">
             <img src="{{ $comic['thumb'] }}" alt="">

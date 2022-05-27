@@ -14,9 +14,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-
+        $menu = config('navbar');
         $comics = Comic::all();
-        return view('comics.index', compact(['comics']));
+        return view('comics.index', compact(['comics', 'menu']));
     }
 
     /**
@@ -65,8 +65,9 @@ class ComicController extends Controller
     // }
     public function show($id)
     {
+        $menu = config('navbar');
         $comic = Comic::find($id);
-        return view('comics.show', compact('comic'));
+        return view('comics.show', compact(['comic', 'menu']));
     }
 
     /**
@@ -77,8 +78,9 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
+        $menu = config('navbar');
         $comic = Comic::findOrFail($id);
-        return view('comics.edit', compact('comic'));
+        return view('comics.edit', compact(['comic', 'menu']));
     }
 
     /**
